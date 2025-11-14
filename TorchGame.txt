@@ -1,0 +1,30 @@
+TorchGame
+
+- lore
+	- trapped in cave by a wizard who made you a fireball
+- player is fireball that gets smaller
+- big cave map
+- different paths to explore
+- torch that runs out
+- light + shadows
+- puzzles + 1 big overarching puzzle
+- 3 themes
+	- fire
+		- impossible game obstacle course thing
+		- salamander
+	- water
+		- follow fish upstream to the correct button
+	- grass
+		- burn burn to reveal secret ending
+			- have tall grass + bushes around
+		- vines?
+		- sun into cave, push mirrors to reflect light
+		- 3 frogs
+			- 1: "the left isnt the same as the right"
+			- 2: "the middle is red"
+			- 3: "the right isnt the same as the middle"
+- secret ending
+	- cool thing
+		- animation, win screen
+			- punch wizard
+			- all critters dancing, free from cave
