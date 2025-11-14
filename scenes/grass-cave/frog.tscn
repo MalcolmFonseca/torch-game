@@ -1,7 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyv7mnetb5blp"]
+[gd_scene load_steps=13 format=3 uid="uid://cyv7mnetb5blp"]
 
 [ext_resource type="Script" uid="uid://lu0d1srjlda6" path="res://scripts/grass-cave/frog.gd" id="1_lo7xd"]
 [ext_resource type="Texture2D" uid="uid://ds85hmqnqb4hy" path="res://assets/grass-cave/frog-green.png" id="1_mi0nj"]
+[ext_resource type="Texture2D" uid="uid://dmo0y8a7q2b0u" path="res://assets/grass-cave/frog-blue.png" id="2_r63ig"]
+[ext_resource type="Texture2D" uid="uid://oy8rhdrygcd5" path="res://assets/grass-cave/frog-red.png" id="4_wf0fl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_247fp"]
+atlas = ExtResource("2_r63ig")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf0fl"]
+atlas = ExtResource("2_r63ig")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lo7xd"]
 atlas = ExtResource("1_mi0nj")
@@ -11,8 +21,27 @@ region = Rect2(16, 0, 16, 16)
 atlas = ExtResource("1_mi0nj")
 region = Rect2(0, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_exwpa"]
+atlas = ExtResource("4_wf0fl")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew8dm"]
+atlas = ExtResource("4_wf0fl")
+region = Rect2(0, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_wf0fl"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_247fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wf0fl")
+}],
+"loop": true,
+"name": &"blue-idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lo7xd")
@@ -21,12 +50,23 @@ animations = [{
 "texture": SubResource("AtlasTexture_r63ig")
 }],
 "loop": true,
-"name": &"default",
+"name": &"green-idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exwpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew8dm")
+}],
+"loop": true,
+"name": &"red-idle",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_247fp"]
-size = Vector2(16, 6)
+size = Vector2(14, 6)
 
 [node name="Frog" type="Area2D"]
 script = ExtResource("1_lo7xd")
@@ -34,8 +74,8 @@ script = ExtResource("1_lo7xd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_wf0fl")
-frame = 1
-frame_progress = 0.0059675234
+animation = &"green-idle"
+autoplay = "green-idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
