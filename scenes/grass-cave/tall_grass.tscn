@@ -1,7 +1,31 @@
-[gd_scene load_steps=11 format=3 uid="uid://des0nylvnoyru"]
+[gd_scene load_steps=17 format=3 uid="uid://des0nylvnoyru"]
 
 [ext_resource type="Texture2D" uid="uid://b8m3f27o0kgwe" path="res://assets/grass-cave/tall-grass.png" id="1_lk7yd"]
 [ext_resource type="Script" uid="uid://ju7erx7dwg1m" path="res://scripts/grass-cave/tall_grass.gd" id="1_vdy6i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_defqh"]
+atlas = ExtResource("1_lk7yd")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ttk1"]
+atlas = ExtResource("1_lk7yd")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78xef"]
+atlas = ExtResource("1_lk7yd")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2ncl"]
+atlas = ExtResource("1_lk7yd")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0oa6"]
+atlas = ExtResource("1_lk7yd")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y5uh"]
+atlas = ExtResource("1_lk7yd")
+region = Rect2(128, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lk7yd"]
 atlas = ExtResource("1_lk7yd")
@@ -29,6 +53,29 @@ region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ov4vw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_defqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ttk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78xef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2ncl")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_y0oa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y5uh")
+}],
+"loop": false,
+"name": &"burn0",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lk7yd")
@@ -68,15 +115,17 @@ animations = [{
 size = Vector2(16, 11)
 
 [node name="tall_grass" type="Area2D"]
-collision_layer = 0
+collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_vdy6i")
 grass_type = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ov4vw")
-animation = &"grass1"
+animation = &"burn0"
 autoplay = "grass1"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)

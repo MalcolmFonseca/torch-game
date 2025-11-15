@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var frog_color: String
+var covered: bool = true #start covered by default
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
