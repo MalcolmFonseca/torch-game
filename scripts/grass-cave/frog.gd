@@ -2,6 +2,10 @@ extends Area2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+var text_bubble_asset: Resource = preload("res://scenes/text_bubble.tscn")
+var text_bubble: Node = null
+
+
 func _ready() -> void:
 	match self.name:
 		#use correct color frog
@@ -14,14 +18,24 @@ func _ready() -> void:
 		_:
 			animated_sprite_2d.play("green-idle")
 
-func _on_body_entered(body: Node2D) -> void:
-	match self.name:
-		#call the correct speech bubble
-		"blue-frog":
-			pass
-		"red-frog":
-			pass
-		"green-frog":
-			pass
-		_:
-			pass
+func _on_body_entered(_body: Node2D) -> void:
+	if !text_bubble:
+		match self.name:
+			#call the correct speech bubble
+			"blue-frog":
+				text_bubble = text_bubble_asset.instantiate()
+				text_bubble.messageText = "blue"
+			"red-frog":
+				text_bubble = text_bubble_asset.instantiate()
+				text_bubble.messageText = "red"
+			"green-frog":
+				text_bubble = text_bubble_asset.instantiate()
+				text_bubble.messageText = "green"
+			_:
+				text_bubble = text_bubble_asset.instantiate()
+				text_bubble.messageText = "green"
+
+func _on_body_exited(_body: Node2D) -> void:
+	if !text_bubble:
+		text_bubble.queue_free()
+	text_bubble = null

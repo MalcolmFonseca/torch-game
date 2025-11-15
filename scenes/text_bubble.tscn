@@ -1,17 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://chfb013hhdswa"]
+[gd_scene load_steps=4 format=3 uid="uid://chfb013hhdswa"]
 
 [ext_resource type="Texture2D" uid="uid://f2l671ke4hng" path="res://assets/text/text-bubble.png" id="1_nrpn5"]
 [ext_resource type="Script" uid="uid://qifoj03aynsf" path="res://scripts/text_bubble.gd" id="1_og1sx"]
+[ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="3_llnp6"]
 
 [node name="TextBubble" type="Node2D"]
 script = ExtResource("1_og1sx")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_top = -45.0
+offset_top = -30.0
 offset_right = 49.0
 texture = ExtResource("1_nrpn5")
 region_rect = Rect2(0, 0, 64, 48)
-patch_margin_left = 34
+patch_margin_left = 25
 patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 19
@@ -25,11 +26,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_bottom = 17
 
 [node name="Label" type="Label" parent="NinePatchRect/MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_llnp6")
 
 [node name="TextureRect" type="TextureRect" parent="NinePatchRect/MarginContainer"]
 layout_mode = 2
