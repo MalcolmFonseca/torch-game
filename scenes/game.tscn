@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://c6iau8q8bm8a1"]
+[gd_scene load_steps=6 format=4 uid="uid://c6iau8q8bm8a1"]
 
 [ext_resource type="Texture2D" uid="uid://ddricka2k4xhg" path="res://assets/grass-cave/grass-tiles.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cyv7mnetb5blp" path="res://scenes/grass-cave/frog.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://chfb013hhdswa" path="res://scenes/text_bubble.tscn" id="3_lnu2h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
 texture = ExtResource("1_uwrxv")
@@ -27,7 +28,11 @@ position = Vector2(72, -19)
 zoom = Vector2(5, 5)
 
 [node name="green-frog" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(-2, -20)
+position = Vector2(-3, 41)
 
 [node name="blue-frog" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(-84, -22)
+
+[node name="TextBubble" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(-13, 32)
+messageText = "bro no way"

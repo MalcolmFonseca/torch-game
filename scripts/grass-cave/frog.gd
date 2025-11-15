@@ -4,7 +4,7 @@ extends Area2D
 
 func _ready() -> void:
 	match self.name:
-        #use correct color frog
+		#use correct color frog
 		"blue-frog":
 			animated_sprite_2d.play("blue-idle")
 		"red-frog":
@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	match self.name:
-        #call the correct speech bubble
+		#call the correct speech bubble
 		"blue-frog":
 			pass
 		"red-frog":
