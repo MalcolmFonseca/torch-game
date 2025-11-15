@@ -1,5 +1,7 @@
 extends Area2D
 
+@export var frog_color: String
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var text_bubble_asset: Resource = preload("res://scenes/text_bubble.tscn")
@@ -7,13 +9,13 @@ var text_bubble: Node = null
 
 
 func _ready() -> void:
-	match self.name:
+	match frog_color:
 		#use correct color frog
-		"blue-frog":
+		"blue":
 			animated_sprite_2d.play("blue-idle")
-		"red-frog":
+		"red":
 			animated_sprite_2d.play("red-idle")
-		"green-frog":
+		"green":
 			animated_sprite_2d.play("green-idle")
 		_:
 			animated_sprite_2d.play("green-idle")
