@@ -5,11 +5,13 @@
 [ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="3_llnp6"]
 
 [node name="TextBubble" type="Node2D"]
+z_index = 100
 script = ExtResource("1_og1sx")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = -10.0
 offset_top = -30.0
-offset_right = 49.0
+offset_right = 39.0
 texture = ExtResource("1_nrpn5")
 region_rect = Rect2(0, 0, 64, 48)
 patch_margin_left = 25

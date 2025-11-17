@@ -112,21 +112,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lk7yd"]
-size = Vector2(16, 11)
+size = Vector2(16, 12)
 
 [node name="tall_grass" type="Area2D"]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_vdy6i")
-grass_type = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ov4vw")
 animation = &"burn0"
 autoplay = "grass1"
-frame = 5
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_lk7yd")
