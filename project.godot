@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [layer_names]
 
+2d_physics/layer_2="player"
 2d_physics/layer_3="tall_grass"
 
 [rendering]
