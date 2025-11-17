@@ -13,7 +13,7 @@ TODO:
 - cave
 	- water
 		- water puts out torch
-		- fish
+		- fish, axolotl
 		- bridge
 		- buttons
 	- fire

@@ -45,7 +45,7 @@ position = Vector2(-36, 33)
 frog_color = "blue"
 
 [node name="TextBubble" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(-13, 44)
+position = Vector2(-13, 42)
 messageText = "Bro no way"
 
 [node name="Trapdoor" parent="." instance=ExtResource("4_iywne")]
