@@ -1,7 +1,7 @@
 TODO:
 
-- player -> jacob
-	- different flame sizes
+X player -> jacob 
+	X different flame sizes
 - title screen
 - end screen
 	- water
@@ -9,7 +9,7 @@ TODO:
 	- grass
 	- secret ending
 	- game over
-- timer
+X timer
 - cave
 	- water
 		- water puts out torch
@@ -20,12 +20,12 @@ TODO:
 		- walk through lava?
 		- obstacle course, impossible game thing
 		- salaminander
-	- grass -> malcolm
-		- burnable env
-		- frogs
+	X grass -> malcolm
+		X burnable env
+		X frogs
 - puzzles
 	- water
 	- fire
-	- grass
+	X grass
 	- secret
 - shaders

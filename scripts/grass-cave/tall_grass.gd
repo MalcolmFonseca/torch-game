@@ -21,5 +21,7 @@ func _on_body_entered(_body: Node2D) -> void:
     if !burned:
         #play burn animation
         animated_sprite_2d.play("burn0")
+        #tuck burnt grass behind other objects
+        self.z_index = 0
         #make sure you cant burn grass twice
         burned = true

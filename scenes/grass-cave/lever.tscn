@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqix5qprn6t2a"]
+
+[ext_resource type="Texture2D" uid="uid://55iys4hv6sqb" path="res://assets/grass-cave/lever.png" id="1_ib54a"]
+[ext_resource type="Script" uid="uid://comp221uyrumm" path="res://scripts/grass-cave/lever.gd" id="1_mswhy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mswhy"]
+atlas = ExtResource("1_ib54a")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55vg7"]
+atlas = ExtResource("1_ib54a")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7acm0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mswhy")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55vg7")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ib54a"]
+size = Vector2(16, 16)
+
+[node name="Lever" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_mswhy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7acm0")
+animation = &"up"
+autoplay = "up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_ib54a")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
