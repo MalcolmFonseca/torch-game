@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 @onready var point_light_2d: PointLight2D = $PointLight2D
 @onready var game_time: Timer = $Timer
 @onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -13,7 +14,7 @@ const ACCELERATION = 25;
 func _physics_process(delta: float) -> void:
 	
 	var curr_time = game_time.time_left
-	point_light_2d.energy = curr_time/20 + 0.5
+	point_light_2d.energy = curr_time/20
 	
 	# Get the horizontal input direction and handle the acceleration/deceleration.
 	var xDirection := Input.get_axis("ui_left", "ui_right")
