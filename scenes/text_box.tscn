@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://brhpjcojgooo8"]
+
+[ext_resource type="Texture2D" uid="uid://ct8xs4pcncuoq" path="res://assets/text/text-box.png" id="1_dyarx"]
+[ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="2_qdwih"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(10, 10)
+transform = Transform2D(10, 0, 0, 10, 0, 0)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
+offset_left = 1.8000001
+offset_top = 43.900005
+offset_right = 112.99999
+offset_bottom = 61.7
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("1_dyarx")
+region_rect = Rect2(0, 0, 128, 32)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 13
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qdwih")
+theme_override_font_sizes/font_size = 16
+text = "the text is too big :("
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+expand_mode = 1

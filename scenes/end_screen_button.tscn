@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://33sfa7rbs2gb"]
+
+[ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="1_nuxl6"]
+
+[node name="Button" type="Button"]
+offset_left = -5.0
+offset_top = 86.0
+offset_right = 155.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("1_nuxl6")
+text = "Try for a different ending"

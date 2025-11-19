@@ -6,12 +6,17 @@
 
 [node name="TextBubble" type="Node2D"]
 z_index = 100
+position = Vector2(0, -3)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_og1sx")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_left = -10.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
 offset_top = -30.0
-offset_right = 39.0
+offset_right = 49.0
+grow_vertical = 0
 texture = ExtResource("1_nrpn5")
 region_rect = Rect2(0, 0, 64, 48)
 patch_margin_left = 25

@@ -40,7 +40,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"blue-idle",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -51,7 +51,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"green-idle",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -62,7 +62,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"red-idle",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_247fp"]
@@ -75,8 +75,9 @@ script = ExtResource("1_lo7xd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_wf0fl")
-animation = &"green-idle"
+animation = &"red-idle"
 autoplay = "green-idle"
+frame_progress = 0.6127977
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
