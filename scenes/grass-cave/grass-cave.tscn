@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=4 uid="uid://c6iau8q8bm8a1"]
+[gd_scene load_steps=14 format=4 uid="uid://c6iau8q8bm8a1"]
 
+[ext_resource type="Script" uid="uid://c8p7o4cltn1j7" path="res://scripts/grass-cave/grass_cave.gd" id="1_g4myy"]
 [ext_resource type="Texture2D" uid="uid://ddricka2k4xhg" path="res://assets/grass-cave/grass-tiles.png" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://rvhc1iu1gro8" path="res://scripts/grass-cave/lever_controller.gd" id="2_gee14"]
 [ext_resource type="PackedScene" uid="uid://bqix5qprn6t2a" path="res://scenes/grass-cave/lever.tscn" id="2_u5sy4"]
@@ -40,7 +41,8 @@ scenes/1/scene = ExtResource("4_lbhrr")
 [sub_resource type="TileSet" id="TileSet_p57ef"]
 sources/0 = SubResource("TileSetScenesCollectionSource_iywne")
 
-[node name="Node2D" type="Node2D"]
+[node name="GrassCave" type="Node2D"]
+script = ExtResource("1_g4myy")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
