@@ -1,0 +1,141 @@
+[gd_scene load_steps=14 format=3 uid="uid://je85v01peso7"]
+
+[ext_resource type="Script" uid="uid://bv2sed0v3pfwr" path="res://scripts/menu/start_screen.gd" id="1_highi"]
+[ext_resource type="Texture2D" uid="uid://mhxgtl6gr761" path="res://assets/menu/start-screen-Sheet.png" id="2_xqiyt"]
+[ext_resource type="Script" uid="uid://sh6q4r3kyyco" path="res://scripts/menu/screen_1.gd" id="3_42jfk"]
+[ext_resource type="FontFile" uid="uid://c4p3la16hngoy" path="res://assets/text/GothicByte.ttf" id="4_xcvj1"]
+[ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="5_en0v4"]
+[ext_resource type="Script" uid="uid://bbmc3xvaykjow" path="res://scripts/menu/screen_2.gd" id="6_8dndp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx5wa"]
+atlas = ExtResource("2_xqiyt")
+region = Rect2(0, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2jwc"]
+atlas = ExtResource("2_xqiyt")
+region = Rect2(0, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm208"]
+atlas = ExtResource("2_xqiyt")
+region = Rect2(288, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pab1"]
+atlas = ExtResource("2_xqiyt")
+region = Rect2(576, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o30b1"]
+atlas = ExtResource("2_xqiyt")
+region = Rect2(864, 0, 288, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he1sj"]
+atlas = ExtResource("2_xqiyt")
+region = Rect2(1152, 0, 288, 162)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_he1sj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx5wa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2jwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm208")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pab1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o30b1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he1sj")
+}],
+"loop": false,
+"name": &"into_cave",
+"speed": 12.0
+}]
+
+[node name="Start Screen" type="Node2D"]
+position = Vector2(0, 2)
+script = ExtResource("1_highi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="CaveBackground" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_he1sj")
+autoplay = "default"
+
+[node name="Screen1" type="Node2D" parent="."]
+script = ExtResource("3_42jfk")
+
+[node name="GameTitle" type="Label" parent="Screen1"]
+offset_left = -57.0
+offset_top = -22.0
+offset_right = 58.0
+offset_bottom = -6.0
+theme_override_fonts/font = ExtResource("4_xcvj1")
+text = "Really Cool Title"
+
+[node name="StartButton" type="Button" parent="Screen1"]
+offset_left = -36.0
+offset_top = 6.0
+offset_right = 36.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("5_en0v4")
+text = "Explore"
+
+[node name="Screen2" type="Node2D" parent="."]
+visible = false
+script = ExtResource("6_8dndp")
+
+[node name="PlotBlurb" type="Label" parent="Screen2"]
+offset_left = -113.0
+offset_top = -66.0
+offset_right = 114.0
+offset_bottom = -27.0
+theme_override_fonts/font = ExtResource("5_en0v4")
+text = "plot goes here, idk the best way to put it but basically a wizard cursed you to be a fireball. now you gotta pick a cave, youre stuck buddy"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="WaterButton" type="Button" parent="Screen2"]
+offset_left = -51.0
+offset_top = 23.0
+offset_right = 51.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("5_en0v4")
+text = "Enter Blue Cave"
+metadata/_edit_use_anchors_ = true
+
+[node name="GrassButton" type="Button" parent="Screen2"]
+offset_left = -55.0
+offset_top = -4.0
+offset_right = 55.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("5_en0v4")
+text = "Enter Green Cave"
+metadata/_edit_use_anchors_ = true
+
+[node name="FireButton" type="Button" parent="Screen2"]
+offset_left = -49.0
+offset_top = 50.0
+offset_right = 49.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("5_en0v4")
+text = "Enter Red Cave"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_up" from="Screen1/StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="button_up" from="Screen1/StartButton" to="Screen1" method="_on_start_button_button_up"]
+[connection signal="button_up" from="Screen1/StartButton" to="Screen2" method="_on_start_button_button_up"]
+[connection signal="button_up" from="Screen2/WaterButton" to="Screen2" method="_on_water_button_button_up"]
+[connection signal="button_up" from="Screen2/GrassButton" to="Screen2" method="_on_grass_button_button_up"]
+[connection signal="button_up" from="Screen2/FireButton" to="Screen2" method="_on_fire_button_button_up"]

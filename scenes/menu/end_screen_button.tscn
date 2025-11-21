@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://33sfa7rbs2gb"]
+[gd_scene load_steps=3 format=3 uid="uid://33sfa7rbs2gb"]
 
 [ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="1_nuxl6"]
+[ext_resource type="Script" uid="uid://b6b3ldsobdtme" path="res://scripts/menu/end_screen_button.gd" id="2_s7sj1"]
 
 [node name="Button" type="Button"]
 offset_left = -5.0
@@ -9,3 +10,6 @@ offset_right = 155.0
 offset_bottom = 105.0
 theme_override_fonts/font = ExtResource("1_nuxl6")
 text = "Try for a different ending"
+script = ExtResource("2_s7sj1")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

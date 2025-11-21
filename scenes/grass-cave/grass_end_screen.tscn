@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="1_uovxp"]
 [ext_resource type="Texture2D" uid="uid://ddricka2k4xhg" path="res://assets/grass-cave/grass-tiles.png" id="1_y4k2y"]
-[ext_resource type="PackedScene" uid="uid://33sfa7rbs2gb" path="res://scenes/end_screen_button.tscn" id="2_dy0lh"]
+[ext_resource type="PackedScene" uid="uid://33sfa7rbs2gb" path="res://scenes/menu/end_screen_button.tscn" id="2_dy0lh"]
 [ext_resource type="PackedScene" uid="uid://cyv7mnetb5blp" path="res://scenes/grass-cave/frog.tscn" id="3_0j3uj"]
 [ext_resource type="Texture2D" uid="uid://bag2kthwyxhbu" path="res://assets/player/player-sheet.png" id="4_dy0lh"]
 
