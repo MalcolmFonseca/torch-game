@@ -6,15 +6,15 @@ extends CharacterBody2D
 @onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
 var isDead = false; 
 
-const SPEED = 300.0
-const ACCELERATION = 25;
+const SPEED = 150.0
+const ACCELERATION = SPEED;
 
 
 # default is 60 physics ticks / second
 func _physics_process(delta: float) -> void:
 	
 	var curr_time = game_time.time_left
-	point_light_2d.energy = curr_time/20
+	point_light_2d.energy = curr_time/20 + 0.5
 	
 	# Get the horizontal input direction and handle the acceleration/deceleration.
 	var xDirection := Input.get_axis("ui_left", "ui_right")
@@ -30,6 +30,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, SPEED * yDirection, ACCELERATION)
 	else:
 		velocity.y = move_toward(velocity.y, 0, ACCELERATION)
+		
+	velocity = velocity.normalized() * SPEED
 
 	move_and_slide()
 	animation_selection()
