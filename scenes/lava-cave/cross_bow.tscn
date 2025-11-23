@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqtvqrls7nj3p"]
+
+[ext_resource type="Script" uid="uid://0r0i5kpeqqt7" path="res://scripts/lava-cave/cross_bow.gd" id="1_dh4y6"]
+[ext_resource type="Texture2D" uid="uid://pixj25m1w3om" path="res://assets/lava-cave/crossbow-sheet.png" id="1_nraic"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh4y6"]
+atlas = ExtResource("1_nraic")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_moqa5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh4y6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sicdi"]
+size = Vector2(11, 6)
+
+[node name="CrossBow" type="Area2D"]
+script = ExtResource("1_dh4y6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_moqa5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 5)
+shape = SubResource("RectangleShape2D_sicdi")

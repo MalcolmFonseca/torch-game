@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://dauo5bgcpaxyk"]
+
+[ext_resource type="Script" uid="uid://byb746v6bi8v2" path="res://scripts/lava-cave/water_spout.gd" id="1_1qn7f"]
+[ext_resource type="Texture2D" uid="uid://dkssarpsdx4v8" path="res://assets/lava-cave/water-spout.png" id="1_cwjpx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxm8x"]
+size = Vector2(32, 9)
+
+[sub_resource type="Animation" id="Animation_1kki0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1qn7f"]
+resource_name = "spout-spray"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 12]
+}
+
+[sub_resource type="Animation" id="Animation_rlco0"]
+resource_name = "spray-loop"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_6u0so"]
+resource_name = "spray-off"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gikso"]
+_data = {
+&"RESET": SubResource("Animation_1kki0"),
+&"spout-spray": SubResource("Animation_1qn7f"),
+&"spray-loop": SubResource("Animation_rlco0"),
+&"spray-off": SubResource("Animation_6u0so")
+}
+
+[node name="WaterTap" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_1qn7f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cwjpx")
+hframes = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_yxm8x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gikso")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

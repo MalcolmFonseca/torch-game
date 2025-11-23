@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2hlsrx1d3scu"]
+
+[ext_resource type="Script" uid="uid://f475amt6xwu4" path="res://scripts/lava-cave/ice_bullet.gd" id="1_gjpwk"]
+[ext_resource type="Texture2D" uid="uid://b0egs71wpw84e" path="res://assets/lava-cave/ice-arrow.png" id="1_jglxv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gjpwk"]
+radius = 2.9997976
+height = 13.999056
+
+[node name="IceBullet" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_gjpwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jglxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+rotation = -1.571573
+shape = SubResource("CapsuleShape2D_gjpwk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
