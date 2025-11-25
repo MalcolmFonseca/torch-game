@@ -63,7 +63,6 @@ animations = [{
 }]
 
 [node name="Start Screen" type="Node2D"]
-position = Vector2(0, 2)
 script = ExtResource("1_highi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
