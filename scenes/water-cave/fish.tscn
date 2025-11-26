@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7g5w2hfr2pgt"]
+
+[ext_resource type="Texture2D" uid="uid://cthivplstbram" path="res://assets/water-cave/fish-underwater.png" id="1_i6qph"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6qph"]
+atlas = ExtResource("1_i6qph")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dna23"]
+atlas = ExtResource("1_i6qph")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f5q7"]
+atlas = ExtResource("1_i6qph")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dna23"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6qph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dna23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f5q7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dna23")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Fish" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_dna23")
+autoplay = "default"
+frame_progress = 0.48961022

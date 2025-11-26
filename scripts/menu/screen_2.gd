@@ -5,7 +5,7 @@ func _on_start_button_button_up() -> void:
 	self.visible = true
 
 func _on_water_button_button_up() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/water-cave/water-cave.tscn")
 
 func _on_fire_button_button_up() -> void:
 	get_tree().change_scene_to_file("res://scenes/lava-cave/lava-cave.tscn")
