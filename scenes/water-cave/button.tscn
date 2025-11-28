@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://cd53vx2w138ad"]
+
+[ext_resource type="Texture2D" uid="uid://dejoxlie5lxpv" path="res://assets/water-cave/buttons.png" id="1_32jwj"]
+[ext_resource type="Script" uid="uid://cbukk1h86cfb1" path="res://scripts/water-cave/button.gd" id="1_ji3wn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_32jwj"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji3wn"]
+atlas = ExtResource("1_32jwj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_372f6"]
+atlas = ExtResource("1_32jwj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j5jo"]
+atlas = ExtResource("1_32jwj")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2fek"]
+atlas = ExtResource("1_32jwj")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k4s3e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji3wn")
+}],
+"loop": true,
+"name": &"green_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_372f6")
+}],
+"loop": true,
+"name": &"green_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6j5jo")
+}],
+"loop": true,
+"name": &"purple_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2fek")
+}],
+"loop": true,
+"name": &"purple_up",
+"speed": 5.0
+}]
+
+[node name="button" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_ji3wn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_32jwj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_k4s3e")
+animation = &"green_down"
+autoplay = "green_up"

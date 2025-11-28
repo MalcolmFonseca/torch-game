@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://4qhp2u8j4xpn"]
+
+[ext_resource type="Script" uid="uid://bdwybjc4ykdeg" path="res://scripts/water-cave/blue_door.gd" id="1_fr3di"]
+[ext_resource type="Texture2D" uid="uid://c05dpn75tbm4m" path="res://assets/water-cave/blue-door.png" id="2_xg53j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhucf"]
+atlas = ExtResource("2_xg53j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g88mg"]
+atlas = ExtResource("2_xg53j")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg53j"]
+atlas = ExtResource("2_xg53j")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51we6"]
+atlas = ExtResource("2_xg53j")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4anh"]
+atlas = ExtResource("2_xg53j")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulr35"]
+atlas = ExtResource("2_xg53j")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrsn8"]
+atlas = ExtResource("2_xg53j")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fr3di"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhucf")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g88mg")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_xg53j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51we6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4anh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulr35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrsn8")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhucf"]
+size = Vector2(32, 26)
+
+[node name="blue_door" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_fr3di")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fr3di")
+animation = &"opening"
+autoplay = "closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_vhucf")

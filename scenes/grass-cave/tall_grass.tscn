@@ -112,7 +112,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lk7yd"]
-size = Vector2(16, 12)
+size = Vector2(16, 19)
 
 [node name="tall_grass" type="Area2D"]
 collision_layer = 4
@@ -125,5 +125,5 @@ animation = &"grass1"
 autoplay = "grass1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_lk7yd")

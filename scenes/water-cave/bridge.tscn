@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://diq8feol5ubkm"]
+
+[ext_resource type="Texture2D" uid="uid://cfkpyf7qt16gr" path="res://assets/water-cave/bridge.png" id="1_hvt3b"]
+
+[node name="Bridge" type="Sprite2D"]
+texture = ExtResource("1_hvt3b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-21, 0)
+polygon = PackedVector2Array(9, -16, 9, 1, 9, 1, 11, 10, 10, 16, -3, 16, 6, 4, 6, -1, -4, -16)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(3, 0)
+polygon = PackedVector2Array(32, -15, 11, 1, 11, 11, 29, 16, 8, 16, 8, 4, 8, -1, 8, -15)
