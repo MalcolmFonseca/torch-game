@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://bb487558pp6aq"]
+
+[ext_resource type="Script" uid="uid://cpo5mc0c4wrsh" path="res://scripts/lava-cave/blocking_gate.gd" id="1_4cn3n"]
+[ext_resource type="Texture2D" uid="uid://buy1rufdjsq5w" path="res://assets/lava-cave/blocking-gate.png" id="2_jatrm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejraa"]
+atlas = ExtResource("2_jatrm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8g5y6"]
+atlas = ExtResource("2_jatrm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2y57l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejraa")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8g5y6")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6no3w"]
+radius = 14.035668
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cn3n"]
+size = Vector2(29, 8)
+
+[node name="BlockingGate" type="Node2D"]
+visibility_layer = 2
+script = ExtResource("1_4cn3n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2y57l")
+animation = &"closed"
+autoplay = "closed"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="PlayerCheckCollision2D" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 2
+position = Vector2(0, 14)
+shape = SubResource("CircleShape2D_6no3w")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visibility_layer = 2
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_4cn3n")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

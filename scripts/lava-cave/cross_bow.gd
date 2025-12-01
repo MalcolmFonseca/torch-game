@@ -1,8 +1,7 @@
 extends Area2D
 
 @onready var main = self.get_parent()
-#@onready var main = get_tree().get_root().get_node("ProjectileController")
-@onready var projectile = load("res://scenes/lava-cave/ice_bullet.tscn")
+@onready var projectile = load("res://scenes/lava-cave/lava_glob.tscn")
 
 # add animation to shoot function
 func shoot():

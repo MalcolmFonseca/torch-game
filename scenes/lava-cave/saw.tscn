@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://3hkmy1pa48wv"]
+
+[ext_resource type="Texture2D" uid="uid://dpx6h1b578pf" path="res://assets/lava-cave/axe-sheet.png" id="1_dj2f5"]
+[ext_resource type="Script" uid="uid://dxc1tv8itvogo" path="res://scripts/lava-cave/saw.gd" id="2_vo4m0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo4m0"]
+atlas = ExtResource("1_dj2f5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrfdf"]
+atlas = ExtResource("1_dj2f5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ocro"]
+atlas = ExtResource("1_dj2f5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nx3nt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vo4m0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrfdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ocro")
+}],
+"loop": true,
+"name": &"default",
+"speed": 19.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vo4m0"]
+radius = 3.9999905
+
+[node name="Saw" type="Area2D"]
+collision_mask = 3
+script = ExtResource("2_vo4m0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nx3nt")
+autoplay = "default"
+frame_progress = 0.07679555
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.99999994, 5.0000005)
+rotation = -1.5677454
+scale = Vector2(1, 1.43)
+shape = SubResource("CircleShape2D_vo4m0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

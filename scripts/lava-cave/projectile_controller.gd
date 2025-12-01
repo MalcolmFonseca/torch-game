@@ -1,6 +1,6 @@
 extends Node
 
-const INTERVAL_SECONDS = 1.5
+const INTERVAL_SECONDS = 2
 
 var time = 0
 var crossbows = []
@@ -20,14 +20,27 @@ func _process(delta: float) -> void:
 	
 	# wait INTERVAL_SECONDS before shooting next crossbow
 	if(time > INTERVAL_SECONDS):
-		# get the current crossbow and shoot
-		var crossbow = crossbows[current_crossbow_index]
-		crossbow.shoot()
-		# select next crossbow to shoot
-		if(current_crossbow_index != crossbows.size() - 1):
-			current_crossbow_index += 1
-		else:
-			current_crossbow_index = 0
 		
-		# reset time to 0 for next interval
+		# fire all crossbows at once
+		while(current_crossbow_index != crossbows.size()):
+			# get the current crossbow and shoot
+			var crossbow = crossbows[current_crossbow_index]
+			crossbow.shoot()
+			# increment for next crossbow
+			current_crossbow_index += 1
+			
+		current_crossbow_index = 0
 		time = 0
+		
+		
+		## get the current crossbow and shoot
+		#var crossbow = crossbows[current_crossbow_index]
+		#crossbow.shoot()
+		## select next crossbow to shoot
+		#if(current_crossbow_index != crossbows.size() - 1):
+			#current_crossbow_index += 1
+		#else:
+			#current_crossbow_index = 0
+		#
+		## reset time to 0 for next interval
+		#time = 0

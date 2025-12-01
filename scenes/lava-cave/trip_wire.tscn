@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2m0d3gvvsx2c"]
+
+[ext_resource type="Script" uid="uid://dbijhcaa11fg2" path="res://scripts/lava-cave/trip_wire.gd" id="1_c0lgw"]
+[ext_resource type="Texture2D" uid="uid://cx247v1q7652n" path="res://assets/lava-cave/trip-wire.png" id="2_pw64x"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6ga4r"]
+a = Vector2(-40, 0)
+b = Vector2(40, 0)
+
+[node name="TripWire" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_c0lgw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pw64x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1, 0.25)
+shape = SubResource("SegmentShape2D_6ga4r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

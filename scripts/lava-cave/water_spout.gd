@@ -4,9 +4,11 @@ extends Area2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 # time between water spraying
-const OFF_INTERVAL_SECONDS = 3
+const OFF_INTERVAL_SECONDS = 1.7
 # duration of water spray
-const ON_INTERVAL_SECONDS = 5
+const ON_INTERVAL_SECONDS = 2
+# slight hit box activation delay to match with animation timing
+const HIT_BOX_DELAY_SECONDS = 0.3
 
 # to track how much time has passed since the last operation
 var time = 0
@@ -26,6 +28,9 @@ func _physics_process(delta: float) -> void:
 		animation_player.queue("spray-loop")
 		# prevent animation from restarting (blocks this conditional)
 		animations_playing = true
+		
+	# Wait short delay before triggering the hit box because water animation needs to show the water first
+	if(time > OFF_INTERVAL_SECONDS + HIT_BOX_DELAY_SECONDS):
 		# activate collision
 		collision_shape_2d.disabled = false
 		
