@@ -7,4 +7,5 @@ func open_door():
 
 func _on_body_entered(body: Node2D) -> void:
 	if(body.name == "Player"):
-		print("Winner, Gagnant")
+		# change scene to fire end screen
+		get_tree().change_scene_to_file("res://scenes/lava-cave/lava_end_screen.tscn")

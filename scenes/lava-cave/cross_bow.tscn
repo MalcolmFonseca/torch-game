@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqtvqrls7nj3p"]
+[gd_scene load_steps=12 format=3 uid="uid://dqtvqrls7nj3p"]
 
 [ext_resource type="Script" uid="uid://0r0i5kpeqqt7" path="res://scripts/lava-cave/cross_bow.gd" id="1_dh4y6"]
 [ext_resource type="Texture2D" uid="uid://pixj25m1w3om" path="res://assets/lava-cave/crossbow-sheet.png" id="1_nraic"]
@@ -6,6 +6,30 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_dh4y6"]
 atlas = ExtResource("1_nraic")
 region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moqa5"]
+atlas = ExtResource("1_nraic")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sicdi"]
+atlas = ExtResource("1_nraic")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u11a6"]
+atlas = ExtResource("1_nraic")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8rms"]
+atlas = ExtResource("1_nraic")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga3a2"]
+atlas = ExtResource("1_nraic")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuo4f"]
+atlas = ExtResource("1_nraic")
+region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_moqa5"]
 animations = [{
@@ -16,6 +40,29 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_moqa5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sicdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u11a6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8rms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga3a2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuo4f")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 23.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sicdi"]
@@ -26,6 +73,9 @@ script = ExtResource("1_dh4y6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_moqa5")
+animation = &"shoot"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 5)
