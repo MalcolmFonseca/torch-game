@@ -1,16 +1,17 @@
-[gd_scene load_steps=19 format=4 uid="uid://csx05iphyj50o"]
+[gd_scene load_steps=20 format=4 uid="uid://csx05iphyj50o"]
 
 [ext_resource type="Texture2D" uid="uid://bot88cx5bn3ah" path="res://assets/lava-cave/path-tiles.png" id="1_shyiv"]
 [ext_resource type="Texture2D" uid="uid://pixj25m1w3om" path="res://assets/lava-cave/crossbow-sheet.png" id="2_qns1m"]
 [ext_resource type="PackedScene" uid="uid://bs3rr4ota1cdt" path="res://scenes/player.tscn" id="2_qwhf4"]
-[ext_resource type="PackedScene" uid="uid://c2m0d3gvvsx2c" path="res://scenes/lava-cave/trip_wire.tscn" id="2_x8bc4"]
+[ext_resource type="PackedScene" path="res://scenes/lava-cave/trip_wire.tscn" id="2_x8bc4"]
 [ext_resource type="PackedScene" uid="uid://dauo5bgcpaxyk" path="res://scenes/lava-cave/water-tap.tscn" id="3_qwhf4"]
+[ext_resource type="PackedScene" uid="uid://co8fqc3hym7lv" path="res://scenes/darkness.tscn" id="5_b3btx"]
 [ext_resource type="Script" uid="uid://cgenqcirtsjut" path="res://scripts/lava-cave/projectile_controller.gd" id="5_xkc5f"]
 [ext_resource type="PackedScene" uid="uid://dqtvqrls7nj3p" path="res://scenes/lava-cave/cross_bow.tscn" id="6_x8bc4"]
-[ext_resource type="PackedScene" uid="uid://bb487558pp6aq" path="res://scenes/lava-cave/blocking_gate.tscn" id="8_1g0uu"]
-[ext_resource type="Script" uid="uid://bkx167yt8c7cs" path="res://scripts/lava-cave/key_door_controller.gd" id="8_pqv42"]
-[ext_resource type="PackedScene" uid="uid://c1gyt8ndve1pc" path="res://scenes/lava-cave/key.tscn" id="10_l0abb"]
-[ext_resource type="PackedScene" uid="uid://di4yoox61iyes" path="res://scenes/lava-cave/fire-door.tscn" id="11_l2r3k"]
+[ext_resource type="PackedScene" path="res://scenes/lava-cave/blocking_gate.tscn" id="8_1g0uu"]
+[ext_resource type="Script" path="res://scripts/lava-cave/key_door_controller.gd" id="8_pqv42"]
+[ext_resource type="PackedScene" path="res://scenes/lava-cave/key.tscn" id="10_l0abb"]
+[ext_resource type="PackedScene" path="res://scenes/lava-cave/fire-door.tscn" id="11_l2r3k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qns1m"]
 texture = ExtResource("1_shyiv")
@@ -171,9 +172,7 @@ tile_set = SubResource("TileSet_qns1m")
 [node name="Player" parent="." instance=ExtResource("2_qwhf4")]
 position = Vector2(0, 24)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0.3403393, 0.34033933, 0.3403393, 1)
+[node name="Darkness" parent="." instance=ExtResource("5_b3btx")]
 
 [node name="WaterTap" parent="." instance=ExtResource("3_qwhf4")]
 position = Vector2(-217, -236)

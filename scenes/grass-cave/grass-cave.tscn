@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c6iau8q8bm8a1"]
+[gd_scene load_steps=15 format=4 uid="uid://c6iau8q8bm8a1"]
 
 [ext_resource type="Script" uid="uid://c8p7o4cltn1j7" path="res://scripts/grass-cave/grass_cave.gd" id="1_g4myy"]
 [ext_resource type="Texture2D" uid="uid://ddricka2k4xhg" path="res://assets/grass-cave/grass-tiles.png" id="1_uwrxv"]
@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://calxqfe1h2whj" path="res://scenes/grass-cave/trapdoor.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://des0nylvnoyru" path="res://scenes/grass-cave/tall_grass.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cblps0et85qc7" path="res://scenes/grass-cave/green_door.tscn" id="6_p57ef"]
-[ext_resource type="PackedScene" uid="uid://bms5wxkwug6g3" path="res://scenes/player.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://bs3rr4ota1cdt" path="res://scenes/player.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://co8fqc3hym7lv" path="res://scenes/darkness.tscn" id="10_278lv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
 texture = ExtResource("1_uwrxv")
@@ -99,3 +100,5 @@ frog_color = "blue"
 
 [node name="trapdoor" parent="." instance=ExtResource("4_iywne")]
 position = Vector2(154, -86)
+
+[node name="Darkness" parent="." instance=ExtResource("10_278lv")]

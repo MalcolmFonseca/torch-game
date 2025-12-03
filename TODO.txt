@@ -1,31 +1,34 @@
 TODO:
 
-X player -> jacob 
-	X different flame sizes
-- title screen
-- end screen
+- implement secret puzzle
+	- fire hints
+	- trapdoor hint + opening
+
+- end screens
 	- water
 	- fire
-	- grass
-	- secret ending
+
+- music
+	- water
+	- fire
+	- main menu
 	- game over
-X timer
-- cave
-	- water
-		- water puts out torch
-		- fish, axolotl
-		- bridge
-		- buttons
-	- fire
-		- walk through lava?
-		- obstacle course, impossible game thing
-		- salaminander
-	X grass -> malcolm
-		X burnable env
-		X frogs
-- puzzles
-	- water
-	- fire
-	X grass
-	- secret
-- shaders
+	- end screens
+
+- sound effects
+	- buttons + levers
+	- player walk?
+	- grass burning
+	- end door opening
+	- fish swimming
+	- tripwire
+	- crossbows shooting
+	- menu buttons
+
+- main menu
+	- custom buttons
+	- actual title + plot
+
+- polish grass cave
+	- add light source to burning grass
+	- add background
