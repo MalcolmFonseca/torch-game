@@ -10,6 +10,9 @@ var isDead = false;
 const SPEED = 150.0
 const ACCELERATION = SPEED;
 
+func _ready() -> void:
+	#so that other objects can kill player through signal bus
+	SignalBus.kill_player.connect(_on_kill_player)
 
 # default is 60 physics ticks / second
 func _physics_process(_delta: float) -> void:
@@ -113,3 +116,8 @@ func animation_selection():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	# change scene to game over after the player dies
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+
+func _on_kill_player() -> void:
+	#stop the timer, setting the time left to 0 and killing the player
+	#using this system to prevent animation breaks
+	game_time.stop()

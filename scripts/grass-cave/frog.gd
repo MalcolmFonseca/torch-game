@@ -26,6 +26,8 @@ func _ready() -> void:
 			animated_sprite_2d.play("green-idle")
 
 func _on_body_entered(_body: Node2D) -> void:
+	#uncover frog
+	covered = false
 	if !text_bubble:
 		match frog_color:
 			#call the correct speech bubble
