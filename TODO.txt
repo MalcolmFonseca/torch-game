@@ -2,7 +2,6 @@ TODO:
 
 - implement secret puzzle
 	- fire hints
-	- trapdoor hint + opening
 
 - end screens
 	- water
@@ -11,7 +10,6 @@ TODO:
 - music
 	- water
 	- fire
-	- main menu
 	- game over
 	- end screens
 
@@ -31,4 +29,3 @@ TODO:
 
 - polish grass cave
 	- add light source to burning grass
-	- add background
