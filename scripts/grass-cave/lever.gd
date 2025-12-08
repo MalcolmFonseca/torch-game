@@ -6,6 +6,8 @@ var interactable: bool = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var level_controller: Node
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 func _ready() -> void:
 	#connect signal to function
 	self.body_entered.connect(_on_body_entered)
@@ -23,8 +25,12 @@ func interact() -> void:
 	match flipped:
 		true:
 			animated_sprite_2d.play("down")
+			audio_stream_player_2d.stream = preload("res://assets/grass-cave/sounds/SwitchOn.wav")
+			audio_stream_player_2d.play()
 		false:
 			animated_sprite_2d.play("up")
+			audio_stream_player_2d.stream = preload("res://assets/grass-cave/sounds/SwitchOff.wav")
+			audio_stream_player_2d.play()
 	
 	level_controller.call("check")
 

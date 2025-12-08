@@ -9,6 +9,8 @@ extends Area2D
 var rain_asset: PackedScene = preload("res://scenes/water-cave/rain.tscn")
 var rain: Node = null
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 func _ready() -> void:
 	self.body_entered.connect(_on_body_entered)
 
@@ -22,6 +24,9 @@ func _on_body_entered(_body: Node2D) -> void:
 		animated_sprite_2d.play("purple_down")
 	else:
 		animated_sprite_2d.play("green_down")
+	
+	audio_stream_player_2d.stream = preload("res://assets/grass-cave/sounds/SwitchOn.wav")
+	audio_stream_player_2d.play()
 
 	if !is_answer:
 		rain = rain_asset.instantiate()

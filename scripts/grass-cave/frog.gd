@@ -8,6 +8,7 @@ var covered: bool = true #start covered by default
 var text_bubble_asset: PackedScene = preload("res://scenes/text_bubble.tscn")
 var text_bubble: Node = null
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	#connect signal to function
@@ -26,6 +27,8 @@ func _ready() -> void:
 			animated_sprite_2d.play("green-idle")
 
 func _on_body_entered(_body: Node2D) -> void:
+	#make sound
+	croak()
 	#uncover frog
 	covered = false
 	if !text_bubble:
@@ -52,3 +55,12 @@ func _on_body_exited(_body: Node2D) -> void:
 	if text_bubble:
 		text_bubble.queue_free()
 	text_bubble = null
+
+func croak() -> void:
+	#random ribbit sound
+	match randi() % 2:
+		1:
+			audio_stream_player_2d.stream = preload("res://assets/grass-cave/sounds/Frog Sounds/Ribbit1.wav")
+		_:
+			audio_stream_player_2d.stream = preload("res://assets/grass-cave/sounds/Frog Sounds/Ribbit2.wav")
+	audio_stream_player_2d.play()

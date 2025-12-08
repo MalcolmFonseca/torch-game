@@ -14,11 +14,8 @@ TODO:
 	- end screens
 
 - sound effects
-	- buttons + levers
 	- player walk?
-	- grass burning
 	- end door opening
-	- fish swimming
 	- tripwire
 	- crossbows shooting
 	- menu buttons
@@ -26,6 +23,3 @@ TODO:
 - main menu
 	- custom buttons
 	- actual title + plot
-
-- polish grass cave
-	- add light source to burning grass

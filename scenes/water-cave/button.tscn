@@ -69,3 +69,7 @@ position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_k4s3e")
 animation = &"green_down"
 autoplay = "green_up"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 5.0
+pitch_scale = 0.75
