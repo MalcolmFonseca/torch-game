@@ -22,4 +22,4 @@ TODO:
 
 - main menu
 	- custom buttons
-	- actual title + plot
+	- actual title
