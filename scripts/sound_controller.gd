@@ -8,6 +8,8 @@ func bg_music_play(song: String):
 			audio_stream_player_2d.stream = preload("res://assets/grass-cave/sounds/frog_puzzle.wav")
 		"frog-win":
 			audio_stream_player_2d.stream = preload("res://assets/grass-cave/sounds/frog_win.wav")
+		"water_cave_theme":
+			audio_stream_player_2d.stream = preload("res://assets/water-cave/Sounds/water_cave_theme.wav")
 		"menu-theme":
 			audio_stream_player_2d.stream = preload("res://assets/menu/sounds/torch_menu.wav")
 		_:
