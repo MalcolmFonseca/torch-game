@@ -14,5 +14,8 @@ TODO:
 	- custom buttons
 	- actual title
 
-- Add wasd to movement controls
+- gameplay
+	- add visual indicator for interact button
+	- Add wasd to movement controls
+
 - itch page / cover image
