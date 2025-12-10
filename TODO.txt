@@ -13,3 +13,6 @@ TODO:
 - main menu
 	- custom buttons
 	- actual title
+
+- Add wasd to movement controls
+- itch page / cover image
