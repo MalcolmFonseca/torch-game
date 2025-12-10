@@ -1,20 +1,15 @@
 TODO:
 
 - implement secret puzzle
-	- fire hints
-
-- end screens
-	- fire
+	- fire riddle
 
 - music
-	- fire
 	- game over
 	- end screens
 
 - sound effects
 	- player walk?
 	- end door opening
-	- tripwire
 	- crossbows shooting
 	- menu buttons
 
