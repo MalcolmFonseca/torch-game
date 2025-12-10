@@ -7,7 +7,6 @@ TODO:
 	- fire
 
 - music
-	- water
 	- fire
 	- game over
 	- end screens
