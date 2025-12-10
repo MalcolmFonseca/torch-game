@@ -1,8 +1,5 @@
 TODO:
 
-- implement secret puzzle
-	- fire riddle
-
 - music
 	- game over
 	- end screens
