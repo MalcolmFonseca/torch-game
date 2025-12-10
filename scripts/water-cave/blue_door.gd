@@ -10,6 +10,7 @@ func _ready():
 
 func _on_body_entered(_body: Node2D) -> void:
 	if is_open:
+		SoundController.bg_music_play("water_win")
 		get_tree().change_scene_to_file(next_scene)
 
 func open() -> void:
