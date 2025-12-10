@@ -9,7 +9,7 @@ var text_bubble: Node = null
 func _on_body_entered(body: Node2D) -> void:
 	if (!text_bubble && body.name == "Player"):
 		text_bubble = text_bubble_asset.instantiate()
-		text_bubble.messageText = "A torches glow never fails to brighten my day"
+		text_bubble.messageText = "A torches glow brightens my day"
 		add_child(text_bubble)
 
 func _on_body_exited(body: Node2D) -> void:
