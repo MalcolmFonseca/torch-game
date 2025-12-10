@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2hlsrx1d3scu"]
+[gd_scene load_steps=10 format=3 uid="uid://c2hlsrx1d3scu"]
 
 [ext_resource type="Script" uid="uid://f475amt6xwu4" path="res://scripts/lava-cave/lava_glob.gd" id="1_ky4d3"]
 [ext_resource type="Texture2D" uid="uid://b0egs71wpw84e" path="res://assets/lava-cave/ice-arrow.png" id="2_1uwqn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gjpwk"]
-radius = 4.9999986
-height = 15.999995
+radius = 2.999999
+height = 7.999998
 
 [sub_resource type="Animation" id="Animation_vxlef"]
 length = 0.001
@@ -64,6 +64,15 @@ _data = {
 &"firing": SubResource("Animation_gjpwk")
 }
 
+[sub_resource type="Gradient" id="Gradient_ky4d3"]
+offsets = PackedFloat32Array(0, 0.6879433)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1uwqn"]
+gradient = SubResource("Gradient_ky4d3")
+fill = 1
+fill_from = Vector2(0.4871795, 0.4957265)
+
 [node name="LavaGlob" type="Area2D"]
 collision_mask = 3
 script = ExtResource("1_ky4d3")
@@ -74,7 +83,7 @@ hframes = 3
 vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(-4, 1)
 rotation = -1.571573
 shape = SubResource("CapsuleShape2D_gjpwk")
 
@@ -84,6 +93,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_2hmhj")
 }
 autoplay = "firing"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1.0000014, 0.5)
+scale = Vector2(0.34375003, 0.203125)
+energy = 0.3
+texture = SubResource("GradientTexture2D_1uwqn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

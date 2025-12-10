@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbuwdqxsyfg2g"]
+
+[ext_resource type="Texture2D" uid="uid://bthifrpm400l5" path="res://assets/lava-cave/on-torch.png" id="1_kx52k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slglx"]
+atlas = ExtResource("1_kx52k")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_io2me"]
+atlas = ExtResource("1_kx52k")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8isu0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slglx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io2me")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="OnTorch" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_8isu0")
+frame_progress = 0.17096531

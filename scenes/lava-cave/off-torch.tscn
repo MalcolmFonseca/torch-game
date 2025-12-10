@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://tb8c0wry2xea"]
+
+[ext_resource type="Texture2D" uid="uid://wpschbfurhy4" path="res://assets/lava-cave/off-torch.png" id="1_iro25"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5vfl"]
+atlas = ExtResource("1_iro25")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqwmx"]
+atlas = ExtResource("1_iro25")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8next"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5vfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqwmx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="OffTorch" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_8next")
+frame_progress = 0.5288436

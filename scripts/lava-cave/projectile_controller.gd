@@ -1,6 +1,8 @@
 extends Node
 
-const INTERVAL_SECONDS = 2
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+const SHOOTING_INTERVAL_SECONDS = 1.6
 
 var time = 0
 var crossbows = []
@@ -10,7 +12,9 @@ var current_crossbow_index = 0
 func _ready() -> void:
 	# get a reference to all crossbows
 	for crossbow in self.get_children():
-		crossbows.append(crossbow)
+		# don't append the audio stream player, only crossbow scenes
+		if(crossbow.name.begins_with("CrossBow")):
+			crossbows.append(crossbow)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,7 +23,10 @@ func _process(delta: float) -> void:
 	time += delta
 	
 	# wait INTERVAL_SECONDS before shooting next crossbow
-	if(time > INTERVAL_SECONDS):
+	if(time > SHOOTING_INTERVAL_SECONDS):
+		
+		# pew sfx
+		audio_stream_player_2d.play()
 		
 		# fire all crossbows at once
 		while(current_crossbow_index != crossbows.size()):
