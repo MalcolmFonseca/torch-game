@@ -1,5 +1,9 @@
 TODO:
 
+- end screens
+	- secret ending
+	- redo water ending
+
 - music
 	- game over
 	- end screens
@@ -19,3 +23,17 @@ TODO:
 	- Add wasd to movement controls
 
 - itch page / cover image
+
+- additional hint for secret ending eluding to trapdoor
+
+- add credits to main menu or its own page
+
+- e button to hit buttons
+
+- game over screen link to cave select instead of main menu
+
+- volume control
+
+- make fish hint easier to read
+
+- make levers more apparent when on
