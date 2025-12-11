@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://je85v01peso7"]
+[gd_scene load_steps=15 format=3 uid="uid://je85v01peso7"]
 
 [ext_resource type="Script" uid="uid://bv2sed0v3pfwr" path="res://scripts/menu/start_screen.gd" id="1_highi"]
 [ext_resource type="Texture2D" uid="uid://mhxgtl6gr761" path="res://assets/menu/start-screen-Sheet.png" id="2_xqiyt"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://c4p3la16hngoy" path="res://assets/text/GothicByte.ttf" id="4_xcvj1"]
 [ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="5_en0v4"]
 [ext_resource type="Script" uid="uid://bbmc3xvaykjow" path="res://scripts/menu/screen_2.gd" id="6_8dndp"]
+[ext_resource type="Texture2D" uid="uid://d1oaepyl0jrp1" path="res://assets/menu/Checkmark.png" id="7_xqiyt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tx5wa"]
 atlas = ExtResource("2_xqiyt")
@@ -117,6 +118,10 @@ theme_override_fonts/font = ExtResource("5_en0v4")
 text = "Enter Blue Cave"
 metadata/_edit_use_anchors_ = true
 
+[node name="Sprite2D" type="Sprite2D" parent="Screen2/WaterButton"]
+position = Vector2(1, -1)
+texture = ExtResource("7_xqiyt")
+
 [node name="GrassButton" type="Button" parent="Screen2"]
 offset_left = -7.0
 offset_top = 60.0
@@ -126,6 +131,10 @@ theme_override_fonts/font = ExtResource("5_en0v4")
 text = "Enter Green Cave"
 metadata/_edit_use_anchors_ = true
 
+[node name="Sprite2D" type="Sprite2D" parent="Screen2/GrassButton"]
+position = Vector2(111, 1)
+texture = ExtResource("7_xqiyt")
+
 [node name="FireButton" type="Button" parent="Screen2"]
 offset_left = -59.0
 offset_top = 39.0
@@ -134,6 +143,10 @@ offset_bottom = 58.0
 theme_override_fonts/font = ExtResource("5_en0v4")
 text = "Enter Red Cave"
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Screen2/FireButton"]
+position = Vector2(97, 3)
+texture = ExtResource("7_xqiyt")
 
 [connection signal="button_up" from="Screen1/StartButton" to="." method="_on_start_button_button_up"]
 [connection signal="button_up" from="Screen1/StartButton" to="Screen1" method="_on_start_button_button_up"]
