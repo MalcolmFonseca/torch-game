@@ -12,6 +12,7 @@ func _on_body_entered(_body: Node2D) -> void:
 	if is_open:
 		SoundController.bg_music_play("water_win")
 		get_tree().change_scene_to_file(next_scene)
+		CompletionTracker.blue_cave_is_completed = true
 
 func open() -> void:
 	if (!is_open):

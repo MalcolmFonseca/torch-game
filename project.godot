@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SoundController="*res://scenes/sound_controller.tscn"
 SignalBus="*res://scripts/signal_bus.gd"
+CompletionTracker="*res://scripts/completion_tracker.gd"
 
 [display]
 
