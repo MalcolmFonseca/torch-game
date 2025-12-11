@@ -35,7 +35,7 @@ func _physics_process(_delta: float) -> void:
 		player_sprite.self_modulate = Color(modulate_value, modulate_value, modulate_value)
 	
 	# Get the horizontal input direction and handle the acceleration/deceleration.
-	var x_direction := Input.get_axis("ui_left", "ui_right")
+	var x_direction := Input.get_axis("Left", "Right")
 	if (x_direction && !isDead):
 		velocity.x = move_toward(velocity.x, SPEED * x_direction, ACCELERATION)
 		player_sprite.flip_h = x_direction < 0
@@ -43,7 +43,7 @@ func _physics_process(_delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, ACCELERATION)
 		
 	# Get the vertical input direction and handle the acceleration/deceleration.
-	var	y_direction := Input.get_axis("ui_up", "ui_down")
+	var	y_direction := Input.get_axis("Up", "Down")
 	if (y_direction && !isDead):
 		velocity.y = move_toward(velocity.y, SPEED * y_direction, ACCELERATION)
 	else:
