@@ -17,5 +17,6 @@ TODO:
 - gameplay
 	- add visual indicator for interact button
 	- Add wasd to movement controls
+	- indicator for caves you've already played through
 
 - itch page / cover image
