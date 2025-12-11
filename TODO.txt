@@ -16,6 +16,5 @@ TODO:
 
 - gameplay
 	- add visual indicator for interact button
-	- indicator for caves you've already played through
 
 - itch page / cover image
