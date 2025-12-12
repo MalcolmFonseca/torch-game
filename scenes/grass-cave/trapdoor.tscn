@@ -37,6 +37,7 @@ size = Vector2(12, 12)
 collision_layer = 0
 collision_mask = 6
 script = ExtResource("1_2jpyo")
+next_scene = "uid://d2vualypiraiw"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kk4rv")

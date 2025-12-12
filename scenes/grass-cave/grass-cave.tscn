@@ -85,7 +85,6 @@ tile_set = SubResource("TileSet_p57ef")
 
 [node name="trapdoor" parent="." instance=ExtResource("4_iywne")]
 position = Vector2(154, -86)
-next_scene = "uid://je85v01peso7"
 
 [node name="Player" parent="." instance=ExtResource("7_u5sy4")]
 z_index = 1

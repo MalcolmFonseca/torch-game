@@ -99,9 +99,9 @@ visible = false
 script = ExtResource("6_8dndp")
 
 [node name="PlotBlurb" type="Label" parent="Screen2"]
-offset_left = -135.0
+offset_left = -144.0
 offset_top = -81.0
-offset_right = 136.0
+offset_right = 144.0
 offset_bottom = 44.0
 theme_override_fonts/font = ExtResource("5_en0v4")
 text = "On your regular walk down to the pond, an unusual cave newly stands in your path. You suppose you could use some adventure, so you venture into the cave and are greeted by an old wizard. \"HOW DARE YOU ENTER MY CAVE! IGNIS AENIGMA!\". And with a wave of his wand he vanished, your flesh turned to fire, and a choice of your next move lays before you..."
