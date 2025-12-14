@@ -85,3 +85,4 @@ shape = SubResource("RectangleShape2D_247fp")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 volume_db = 3.0
+bus = &"SFX"

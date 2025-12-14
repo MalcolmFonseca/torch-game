@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://je85v01peso7"]
+[gd_scene load_steps=18 format=3 uid="uid://je85v01peso7"]
 
 [ext_resource type="Script" uid="uid://bv2sed0v3pfwr" path="res://scripts/menu/start_screen.gd" id="1_highi"]
 [ext_resource type="Texture2D" uid="uid://mhxgtl6gr761" path="res://assets/menu/start-screen-Sheet.png" id="2_xqiyt"]
@@ -6,7 +6,10 @@
 [ext_resource type="FontFile" uid="uid://c4p3la16hngoy" path="res://assets/text/GothicByte.ttf" id="4_xcvj1"]
 [ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="5_en0v4"]
 [ext_resource type="Script" uid="uid://bbmc3xvaykjow" path="res://scripts/menu/screen_2.gd" id="6_8dndp"]
+[ext_resource type="Script" uid="uid://cxjoe7ef4iuyp" path="res://scripts/menu/settings.gd" id="6_en0v4"]
+[ext_resource type="PackedScene" uid="uid://cdyhu1shgr52c" path="res://scenes/menu/volume_slider.tscn" id="7_mp7u2"]
 [ext_resource type="Texture2D" uid="uid://d1oaepyl0jrp1" path="res://assets/menu/Checkmark.png" id="7_xqiyt"]
+[ext_resource type="Theme" uid="uid://crouhsmvsa8je" path="res://assets/menu/Themes/Red_Cave_Button.tres" id="8_42jfk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tx5wa"]
 atlas = ExtResource("2_xqiyt")
@@ -94,6 +97,91 @@ offset_bottom = 25.0
 theme_override_fonts/font = ExtResource("5_en0v4")
 text = "Explore"
 
+[node name="OptionsButton" type="Button" parent="Screen1"]
+offset_left = -29.0
+offset_top = 36.0
+offset_right = 29.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("5_en0v4")
+text = "Options"
+
+[node name="Settings" type="Node2D" parent="."]
+visible = false
+script = ExtResource("6_en0v4")
+
+[node name="Title" type="Label" parent="Settings"]
+offset_left = -37.0
+offset_top = -49.0
+offset_right = 37.0
+offset_bottom = -35.0
+theme_override_fonts/font = ExtResource("5_en0v4")
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.0
+offset_top = -33.0
+offset_right = 66.0
+offset_bottom = 46.0
+grow_horizontal = 2
+theme_override_constants/separation = 16
+
+[node name="MasterVolume" type="Label" parent="Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57700837, 0.5770084, 0.57700837, 1)
+theme_override_fonts/font = ExtResource("5_en0v4")
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="VolumeSlider" parent="Settings/VBoxContainer/MasterVolume" instance=ExtResource("7_mp7u2")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 124.0
+offset_bottom = 24.0
+bus_name = "Master"
+
+[node name="MusicVolume" type="Label" parent="Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5764706, 0.5764706, 0.5764706, 1)
+theme_override_fonts/font = ExtResource("5_en0v4")
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="VolumeSlider" parent="Settings/VBoxContainer/MusicVolume" instance=ExtResource("7_mp7u2")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 124.0
+offset_bottom = 25.0
+bus_name = "Music"
+
+[node name="SFXVolume" type="Label" parent="Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5764706, 0.5764706, 0.5764706, 1)
+theme_override_fonts/font = ExtResource("5_en0v4")
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="VolumeSlider" parent="Settings/VBoxContainer/SFXVolume" instance=ExtResource("7_mp7u2")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 124.0
+offset_bottom = 24.0
+bus_name = "SFX"
+
+[node name="BackButton" type="Button" parent="Settings"]
+offset_left = -18.0
+offset_top = 55.0
+offset_right = 18.0
+offset_bottom = 74.0
+theme_override_fonts/font = ExtResource("5_en0v4")
+text = "Back"
+
 [node name="Screen2" type="Node2D" parent="."]
 visible = false
 script = ExtResource("6_8dndp")
@@ -115,7 +203,7 @@ offset_top = 60.0
 offset_right = -9.0
 offset_bottom = 79.0
 theme_override_fonts/font = ExtResource("5_en0v4")
-text = "Enter Blue Cave"
+text = "Enter Blue Cav"
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Screen2/WaterButton"]
@@ -138,19 +226,24 @@ texture = ExtResource("7_xqiyt")
 [node name="FireButton" type="Button" parent="Screen2"]
 offset_left = -59.0
 offset_top = 39.0
-offset_right = 39.0
+offset_right = 46.0
 offset_bottom = 58.0
+focus_mode = 0
+theme = ExtResource("8_42jfk")
 theme_override_fonts/font = ExtResource("5_en0v4")
+theme_override_font_sizes/font_size = 16
 text = "Enter Red Cave"
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Screen2/FireButton"]
-position = Vector2(97, 3)
+position = Vector2(3, 0)
 texture = ExtResource("7_xqiyt")
 
 [connection signal="button_up" from="Screen1/StartButton" to="." method="_on_start_button_button_up"]
 [connection signal="button_up" from="Screen1/StartButton" to="Screen1" method="_on_start_button_button_up"]
 [connection signal="button_up" from="Screen1/StartButton" to="Screen2" method="_on_start_button_button_up"]
+[connection signal="button_up" from="Screen1/OptionsButton" to="Screen1" method="_on_options_button_button_up"]
+[connection signal="button_up" from="Settings/BackButton" to="Settings" method="_on_back_button_button_up"]
 [connection signal="button_up" from="Screen2/WaterButton" to="Screen2" method="_on_water_button_button_up"]
 [connection signal="button_up" from="Screen2/GrassButton" to="Screen2" method="_on_grass_button_button_up"]
 [connection signal="button_up" from="Screen2/FireButton" to="Screen2" method="_on_fire_button_button_up"]
