@@ -95,8 +95,8 @@ libraries = {
 autoplay = "firing"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(1.0000014, 0.5)
-scale = Vector2(0.34375003, 0.203125)
+position = Vector2(1.500001, 0.9999998)
+scale = Vector2(0.32812503, 0.15625)
 energy = 0.3
 texture = SubResource("GradientTexture2D_1uwqn")
 

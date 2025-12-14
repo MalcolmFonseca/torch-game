@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxy3a0iwr2sru"]
+[gd_scene load_steps=10 format=3 uid="uid://bxy3a0iwr2sru"]
 
 [ext_resource type="Script" uid="uid://c7ikqh7nghoxe" path="res://scripts/lava-cave/salamander.gd" id="1_16swa"]
 [ext_resource type="Texture2D" uid="uid://cl2wsncxfwvyq" path="res://assets/lava-cave/salamander.png" id="2_16swa"]
+[ext_resource type="AudioStream" uid="uid://dbiiyoubby6ti" path="res://assets/lava-cave/sounds/Salamander_1.wav" id="3_x325y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x325y"]
 atlas = ExtResource("2_16swa")
@@ -54,6 +55,10 @@ frame_progress = 0.49424988
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 3
 shape = SubResource("CircleShape2D_p3dhg")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_x325y")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
