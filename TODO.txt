@@ -29,5 +29,3 @@ TODO:
 - e button to hit buttons
 
 - game over screen link to cave select instead of main menu
-
-- volume control
