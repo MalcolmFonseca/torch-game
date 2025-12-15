@@ -6,8 +6,8 @@
 [ext_resource type="FontFile" uid="uid://c4p3la16hngoy" path="res://assets/text/GothicByte.ttf" id="4_xcvj1"]
 [ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="5_en0v4"]
 [ext_resource type="Script" uid="uid://bbmc3xvaykjow" path="res://scripts/menu/screen_2.gd" id="6_8dndp"]
-[ext_resource type="Script" uid="uid://cxjoe7ef4iuyp" path="res://scripts/menu/settings.gd" id="6_en0v4"]
-[ext_resource type="PackedScene" uid="uid://cdyhu1shgr52c" path="res://scenes/menu/volume_slider.tscn" id="7_mp7u2"]
+[ext_resource type="Script" path="res://scripts/menu/settings.gd" id="6_en0v4"]
+[ext_resource type="PackedScene" path="res://scenes/menu/volume_slider.tscn" id="7_mp7u2"]
 [ext_resource type="Texture2D" uid="uid://d1oaepyl0jrp1" path="res://assets/menu/Checkmark.png" id="7_xqiyt"]
 [ext_resource type="Theme" uid="uid://crouhsmvsa8je" path="res://assets/menu/Themes/Red_Cave_Button.tres" id="8_42jfk"]
 
@@ -203,7 +203,7 @@ offset_top = 60.0
 offset_right = -9.0
 offset_bottom = 79.0
 theme_override_fonts/font = ExtResource("5_en0v4")
-text = "Enter Blue Cav"
+text = "Enter Blue Cave"
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Screen2/WaterButton"]

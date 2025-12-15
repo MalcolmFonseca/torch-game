@@ -18,6 +18,8 @@ func bg_music_play(song: String):
 			audio_stream_player_2d.stream = preload("res://assets/lava-cave/sounds/Lava_Cave_Music.wav")
 		"lava-win":
 			audio_stream_player_2d.stream = preload("res://assets/lava-cave/sounds/Lava_Win.wav")
+		"secret":
+			audio_stream_player_2d.stream = preload("res://assets/secret/torch_secret.wav")
 		_:
 			#default song is frog puzzle song, by virtue of it being created first and need for base case
 			audio_stream_player_2d.stream = preload("res://assets/grass-cave/sounds/frog_puzzle.wav")
