@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://4qhp2u8j4xpn"]
+[gd_scene load_steps=13 format=3 uid="uid://4qhp2u8j4xpn"]
 
 [ext_resource type="Script" uid="uid://bdwybjc4ykdeg" path="res://scripts/water-cave/blue_door.gd" id="1_fr3di"]
 [ext_resource type="Texture2D" uid="uid://c05dpn75tbm4m" path="res://assets/water-cave/blue-door.png" id="2_xg53j"]
+[ext_resource type="AudioStream" uid="uid://cltxqmesucwvj" path="res://assets/Sounds/door-open.wav" id="3_g88mg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhucf"]
 atlas = ExtResource("2_xg53j")
@@ -80,3 +81,6 @@ autoplay = "closed"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_vhucf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_g88mg")

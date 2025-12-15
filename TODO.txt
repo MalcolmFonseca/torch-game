@@ -1,7 +1,1 @@
 TODO:
-
-- sound effects
-	- player walk?
-	- end door opening
-	- crossbows shooting
-	- menu buttons

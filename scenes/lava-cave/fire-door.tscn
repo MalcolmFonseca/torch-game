@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://di4yoox61iyes"]
+[gd_scene load_steps=13 format=3 uid="uid://hgkbekug8hck"]
 
 [ext_resource type="Script" uid="uid://d3w363g76dgid" path="res://scripts/lava-cave/fire_door.gd" id="1_2jj3l"]
 [ext_resource type="Texture2D" uid="uid://kfnw0kud7oyr" path="res://assets/lava-cave/fire-door.png" id="2_q0q5o"]
+[ext_resource type="AudioStream" uid="uid://cltxqmesucwvj" path="res://assets/Sounds/door-open.wav" id="3_q0q5o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0cb3d"]
 atlas = ExtResource("2_q0q5o")
@@ -74,5 +75,8 @@ animation = &"Opening"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_1cggr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_q0q5o")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

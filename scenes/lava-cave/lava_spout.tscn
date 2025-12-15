@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dauo5bgcpaxyk"]
+[gd_scene load_steps=9 format=3 uid="uid://d384pu47btwe"]
 
 [ext_resource type="Script" uid="uid://byb746v6bi8v2" path="res://scripts/lava-cave/water_spout.gd" id="1_1qn7f"]
 [ext_resource type="Texture2D" uid="uid://dkssarpsdx4v8" path="res://assets/lava-cave/water-spout.png" id="1_cwjpx"]

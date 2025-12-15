@@ -4,6 +4,7 @@ var is_open: bool = false
 @export_file("*.tscn") var next_scene
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready():
 	self.body_entered.connect(_on_body_entered)
@@ -17,4 +18,5 @@ func _on_body_entered(_body: Node2D) -> void:
 func open() -> void:
 	if (!is_open):
 		animated_sprite_2d.play("opening")
+		audio_stream_player_2d.play()
 		is_open = true

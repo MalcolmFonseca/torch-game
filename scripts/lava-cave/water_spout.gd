@@ -45,6 +45,7 @@ func _physics_process(delta: float) -> void:
 		# allow entrance into the first conditional again
 		animations_playing = false
 		# deactivate collision
+		await get_tree().create_timer(.5).timeout
 		collision_shape_2d.disabled = true
 
 # triggers when the player enters the area, but ONLY when the water is visibly spraying
