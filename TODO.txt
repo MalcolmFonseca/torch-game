@@ -1,8 +1,5 @@
 TODO:
 
-- end screens
-	- redo water ending
-
 - music
 	- game over
 
@@ -15,14 +12,9 @@ TODO:
 - main menu
 	- custom buttons
 	- actual title
-
-- gameplay
-	- add visual indicator for interact button
-
+	
 - itch page / cover image
 
 - add credits to main menu or its own page
-
-- e button to hit buttons
 
 - game over screen link to cave select instead of main menu
