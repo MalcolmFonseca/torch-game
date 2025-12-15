@@ -1,20 +1,7 @@
 TODO:
 
-- music
-	- game over
-
 - sound effects
 	- player walk?
 	- end door opening
 	- crossbows shooting
 	- menu buttons
-
-- main menu
-	- custom buttons
-	- actual title
-	
-- itch page / cover image
-
-- add credits to main menu or its own page
-
-- game over screen link to cave select instead of main menu
