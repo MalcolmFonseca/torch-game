@@ -11,7 +11,7 @@ var text_bubble: Node = null
 func _on_body_entered(body: Node2D) -> void:
 	if (!text_bubble && body.name == "Player"):
 		text_bubble = text_bubble_asset.instantiate()
-		text_bubble.messageText = "A torch's glow brightens my day"
+		text_bubble.messageText = "The wizard fears my torches!"
 		audio_stream_player_2d.play()
 		add_child(text_bubble)
 

@@ -10,3 +10,7 @@ var blue_cave_is_completed : bool = false
 
 var green_cave_is_completed : bool = false
 #var green_cave_record_time : float = 0
+
+# Set to true by the start_screen menu based on if they've clicked "explore"
+# When true immediately displays cave buttons so game-over to replay loop is more swift
+var has_passed_menu : bool = false

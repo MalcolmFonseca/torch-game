@@ -206,14 +206,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="BackButton" type="Button" parent="Screen2"]
-offset_left = -134.0
-offset_top = 39.0
-offset_right = -87.0
-offset_bottom = 58.0
-theme = ExtResource("10_5c0ow")
-theme_override_fonts/font = ExtResource("5_en0v4")
-
 [node name="WaterButton" type="Button" parent="Screen2"]
 offset_left = -111.0
 offset_top = 60.0
@@ -268,7 +260,6 @@ texture = ExtResource("7_xqiyt")
 [connection signal="button_up" from="Screen1/StartButton" to="Screen2" method="_on_start_button_button_up"]
 [connection signal="button_up" from="Screen1/OptionsButton" to="Screen1" method="_on_options_button_button_up"]
 [connection signal="button_up" from="Settings/BackButton" to="Settings" method="_on_back_button_button_up"]
-[connection signal="button_up" from="Screen2/BackButton" to="." method="_on_back_button_button_up"]
 [connection signal="button_up" from="Screen2/WaterButton" to="Screen2" method="_on_water_button_button_up"]
 [connection signal="button_up" from="Screen2/GrassButton" to="Screen2" method="_on_grass_button_button_up"]
 [connection signal="button_up" from="Screen2/FireButton" to="Screen2" method="_on_fire_button_button_up"]
