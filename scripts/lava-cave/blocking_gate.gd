@@ -24,6 +24,9 @@ var hasKey : bool = false
 # once the door opens, it stays open
 var isOpen : bool = false
 
+var interact_hint_asset: PackedScene = preload("res://scenes/interact_hint.tscn")
+var interact_hint: Node = null
+
 func _ready() -> void:
 	parent = self.get_parent()
 
@@ -60,6 +63,9 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 		text_bubble.add_child(key_symbol)
 		# add the text bubble with the key as a child to the scene
 		add_child(text_bubble)
+	else: #if has key, show button to press
+		interact_hint = interact_hint_asset.instantiate()
+		add_child(interact_hint)
 	isColliding = true
 
 
@@ -68,4 +74,9 @@ func _on_area_2d_body_exited(_body: Node2D) -> void:
 	if text_bubble:
 		text_bubble.queue_free()
 	text_bubble = null
+
+	if interact_hint:
+		interact_hint.queue_free()
+	interact_hint = null
+	
 	isColliding = false

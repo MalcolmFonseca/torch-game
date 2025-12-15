@@ -80,12 +80,12 @@ autoplay = "default"
 script = ExtResource("3_42jfk")
 
 [node name="GameTitle" type="Label" parent="Screen1"]
-offset_left = -77.0
+offset_left = -79.0
 offset_top = -41.0
-offset_right = 81.0
+offset_right = 79.0
 offset_bottom = -6.0
 theme_override_fonts/font = ExtResource("4_xcvj1")
-text = "Really Cool Title"
+text = "Cursed Caves"
 horizontal_alignment = 1
 vertical_alignment = 1
 

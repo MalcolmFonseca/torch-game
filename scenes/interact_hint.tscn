@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6nbsir6qt8tf"]
+
+[ext_resource type="Texture2D" uid="uid://c1cfvxoviom8q" path="res://assets/interact-button.png" id="1_8vtyu"]
+
+[node name="interact_hint" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -18)
+texture = ExtResource("1_8vtyu")

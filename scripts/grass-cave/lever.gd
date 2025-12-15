@@ -8,6 +8,9 @@ var level_controller: Node
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+var interact_hint_asset: PackedScene = preload("res://scenes/interact_hint.tscn")
+var interact_hint: Node = null
+
 func _ready() -> void:
 	#connect signal to function
 	self.body_entered.connect(_on_body_entered)
@@ -40,6 +43,11 @@ func state() -> bool:
 #keep track if player overlap
 func _on_body_entered(_body: Node2D) -> void:
 	interactable = true
+	interact_hint = interact_hint_asset.instantiate()
+	add_child(interact_hint)
 
 func _on_body_exited(_body: Node2D) -> void:
 	interactable = false
+	if interact_hint:
+		interact_hint.queue_free()
+	interact_hint = null
