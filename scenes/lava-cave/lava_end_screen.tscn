@@ -1,12 +1,13 @@
-[gd_scene load_steps=27 format=4 uid="uid://dbqw3d0o17k6m"]
+[gd_scene load_steps=28 format=4 uid="uid://dbqw3d0o17k6m"]
 
-[ext_resource type="Script" uid="uid://dvwp37t6a42ca" path="res://scripts/lava-cave/lava_end_screen.gd" id="1_afcc5"]
+[ext_resource type="Script" path="res://scripts/lava-cave/lava_end_screen.gd" id="1_afcc5"]
 [ext_resource type="Texture2D" uid="uid://bot88cx5bn3ah" path="res://assets/lava-cave/path-tiles.png" id="1_d6qa0"]
 [ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="2_a6c14"]
 [ext_resource type="Texture2D" uid="uid://bag2kthwyxhbu" path="res://assets/player/player-sheet.png" id="2_brkko"]
 [ext_resource type="Texture2D" uid="uid://ddricka2k4xhg" path="res://assets/grass-cave/grass-tiles.png" id="2_r7sri"]
-[ext_resource type="Script" uid="uid://b6b3ldsobdtme" path="res://scripts/menu/end_screen_button.gd" id="4_a6c14"]
+[ext_resource type="PackedScene" uid="uid://33sfa7rbs2gb" path="res://scenes/menu/end_screen_button.tscn" id="7_1q5q1"]
 [ext_resource type="Texture2D" uid="uid://cl2wsncxfwvyq" path="res://assets/lava-cave/salamander.png" id="7_npmrb"]
+[ext_resource type="Theme" uid="uid://bb1kbc5qhhnwf" path="res://assets/menu/Themes/end_screen_btn.tres" id="8_5mp13"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_npmrb"]
 texture = ExtResource("2_r7sri")
@@ -243,15 +244,6 @@ sprite_frames = SubResource("SpriteFrames_jcxem")
 autoplay = "default"
 frame_progress = 0.2920823
 
-[node name="Button" type="Button" parent="."]
-offset_left = 8.0
-offset_top = 75.0
-offset_right = 186.0
-offset_bottom = 94.0
-theme_override_fonts/font = ExtResource("2_a6c14")
-text = "TRY FOR A DIFFERENT ENDING"
-script = ExtResource("4_a6c14")
-
 [node name="Salamander" type="AnimatedSprite2D" parent="."]
 position = Vector2(106, -19)
 sprite_frames = SubResource("SpriteFrames_7ovay")
@@ -259,4 +251,12 @@ autoplay = "default"
 frame = 3
 frame_progress = 0.9782194
 
-[connection signal="button_up" from="Button" to="Button" method="_on_button_up"]
+[node name="Button2" parent="." instance=ExtResource("7_1q5q1")]
+offset_left = -7.0
+offset_top = 85.0
+offset_right = 153.0
+offset_bottom = 104.0
+focus_mode = 0
+theme = ExtResource("8_5mp13")
+theme_override_colors/font_hover_color = Color(0.93333334, 0.6, 0.3764706, 1)
+text = ""

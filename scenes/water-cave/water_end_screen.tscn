@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dkc738ngsxm84"]
+[gd_scene load_steps=21 format=4 uid="uid://dkc738ngsxm84"]
 
 [ext_resource type="Texture2D" uid="uid://ddricka2k4xhg" path="res://assets/grass-cave/grass-tiles.png" id="1_08pwu"]
 [ext_resource type="Texture2D" uid="uid://dfgw75q503ffj" path="res://assets/water-cave/water-bottom.png" id="1_idbjj"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="3_a458l"]
 [ext_resource type="Texture2D" uid="uid://bag2kthwyxhbu" path="res://assets/player/player-sheet.png" id="5_gib00"]
 [ext_resource type="PackedScene" uid="uid://b7g5w2hfr2pgt" path="res://scenes/water-cave/fish.tscn" id="7_f3145"]
+[ext_resource type="Theme" uid="uid://bb1kbc5qhhnwf" path="res://assets/menu/Themes/end_screen_btn.tres" id="8_8jaxt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8jaxt"]
 texture = ExtResource("1_idbjj")
@@ -275,12 +276,6 @@ tile_set = SubResource("TileSet_7yomg")
 position = Vector2(15, 28)
 zoom = Vector2(4, 4)
 
-[node name="Button" parent="." instance=ExtResource("2_4sh7t")]
-offset_left = -7.0
-offset_top = 85.0
-offset_right = 153.0
-offset_bottom = 104.0
-
 [node name="Label" type="Label" parent="."]
 offset_left = -124.0
 offset_top = -47.0
@@ -303,3 +298,13 @@ sprite_frames = SubResource("SpriteFrames_447tl")
 autoplay = "default"
 frame = 2
 frame_progress = 0.47329244
+
+[node name="Button2" parent="." instance=ExtResource("2_4sh7t")]
+offset_left = -7.0
+offset_top = 85.0
+offset_right = 153.0
+offset_bottom = 104.0
+focus_mode = 0
+theme = ExtResource("8_8jaxt")
+theme_override_colors/font_hover_color = Color(0.93333334, 0.6, 0.3764706, 1)
+text = ""

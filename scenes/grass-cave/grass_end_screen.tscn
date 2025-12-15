@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://b2bgdcw0oae85"]
+[gd_scene load_steps=15 format=4 uid="uid://b2bgdcw0oae85"]
 
 [ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="1_uovxp"]
 [ext_resource type="Texture2D" uid="uid://ddricka2k4xhg" path="res://assets/grass-cave/grass-tiles.png" id="1_y4k2y"]
 [ext_resource type="PackedScene" uid="uid://33sfa7rbs2gb" path="res://scenes/menu/end_screen_button.tscn" id="2_dy0lh"]
 [ext_resource type="PackedScene" uid="uid://cyv7mnetb5blp" path="res://scenes/grass-cave/frog.tscn" id="3_0j3uj"]
+[ext_resource type="Theme" uid="uid://bb1kbc5qhhnwf" path="res://assets/menu/Themes/end_screen_btn.tres" id="3_nrpob"]
 [ext_resource type="Texture2D" uid="uid://bag2kthwyxhbu" path="res://assets/player/player-sheet.png" id="4_dy0lh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vc71"]
@@ -81,6 +82,10 @@ offset_left = -7.0
 offset_top = 85.0
 offset_right = 153.0
 offset_bottom = 104.0
+focus_mode = 0
+theme = ExtResource("3_nrpob")
+theme_override_colors/font_hover_color = Color(0.93333334, 0.6, 0.3764706, 1)
+text = ""
 
 [node name="Label" type="Label" parent="."]
 offset_left = -124.0
