@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://hnnpxw6kxmhs"]
+[gd_scene load_steps=13 format=4 uid="uid://hnnpxw6kxmhs"]
 
 [ext_resource type="Texture2D" uid="uid://bot88cx5bn3ah" path="res://assets/lava-cave/path-tiles.png" id="1_wqhvx"]
 [ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="2_tbwuq"]
+[ext_resource type="Theme" uid="uid://bf3t7kcyw30tt" path="res://assets/game-over/Themes/Main_Menu_Button.tres" id="3_7m3ot"]
 [ext_resource type="Script" uid="uid://bhgjtu0bwnhoo" path="res://scripts/menu/game_over.gd" id="3_tbwuq"]
 [ext_resource type="Texture2D" uid="uid://bag2kthwyxhbu" path="res://assets/player/player-sheet.png" id="4_racf3"]
 
@@ -98,13 +99,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
-offset_left = -129.0
-offset_top = 150.0
-offset_right = 131.0
-offset_bottom = 202.0
+offset_left = -130.0
+offset_top = 151.0
+offset_right = 130.0
+offset_bottom = 203.0
+focus_mode = 0
+theme = ExtResource("3_7m3ot")
 theme_override_fonts/font = ExtResource("2_tbwuq")
 theme_override_font_sizes/font_size = 64
-text = "MAIN MENU"
 script = ExtResource("3_tbwuq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

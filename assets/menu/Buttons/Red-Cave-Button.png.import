@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyhcp42cg5dt7"
-path="res://.godot/imported/Blue-Cave-Button.png-345ba74dfbe93f58487e86bebebbbaf2.ctex"
+uid="uid://c6wrql7amc2c8"
+path="res://.godot/imported/Red-Cave-Button.png-f78da3887462acaf7526d2811ff1ada5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/Blue-Cave-Button.png"
-dest_files=["res://.godot/imported/Blue-Cave-Button.png-345ba74dfbe93f58487e86bebebbbaf2.ctex"]
+source_file="res://assets/menu/Buttons/Red-Cave-Button.png"
+dest_files=["res://.godot/imported/Red-Cave-Button.png-f78da3887462acaf7526d2811ff1ada5.ctex"]
 
 [params]
 
