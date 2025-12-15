@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgi2s4lleeln"
-path="res://.godot/imported/Green-Cave-Button.png-19216d4bee752d0253f5b16670b87a68.ctex"
+uid="uid://iwcjq7swgl41"
+path="res://.godot/imported/Explore_Button.png-0c6402acbc6339d5753a193ee32094f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/Green-Cave-Button.png"
-dest_files=["res://.godot/imported/Green-Cave-Button.png-19216d4bee752d0253f5b16670b87a68.ctex"]
+source_file="res://assets/menu/Buttons/Explore_Button.png"
+dest_files=["res://.godot/imported/Explore_Button.png-0c6402acbc6339d5753a193ee32094f9.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6wrql7amc2c8"
-path="res://.godot/imported/Red-Cave-Button.png-db8702466cad62f873f15e5d4dc9e6d4.ctex"
+uid="uid://cyke4fe6qebwt"
+path="res://.godot/imported/Game-over-button.png-905b894c32c5984d0da79c4dc6fda835.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/Red-Cave-Button.png"
-dest_files=["res://.godot/imported/Red-Cave-Button.png-db8702466cad62f873f15e5d4dc9e6d4.ctex"]
+source_file="res://assets/game-over/Game-over-button.png"
+dest_files=["res://.godot/imported/Game-over-button.png-905b894c32c5984d0da79c4dc6fda835.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=17 format=4 uid="uid://crouhsmvsa8je"]
 
-[ext_resource type="Texture2D" uid="uid://c6wrql7amc2c8" path="res://assets/menu/Red-Cave-Button.png" id="1_vnok0"]
+[ext_resource type="Texture2D" uid="uid://c6wrql7amc2c8" path="res://assets/menu/Buttons/Red-Cave-Button.png" id="1_vnok0"]
 [ext_resource type="FontFile" uid="uid://dwsnvt2vc1omb" path="res://assets/text/ByteBounce.ttf" id="2_sj8sq"]
 
 [sub_resource type="Image" id="Image_vnok0"]
